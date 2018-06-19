@@ -1,0 +1,26 @@
+{
+  "name": "peptide-spectrum-match",
+  "version": "0.0.1",
+  "description": "A class for standardizing how peptide spectrum matches (PSMs) are handled",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emptyport/psm.git"
+  },
+  "keywords": [
+    "chemistry",
+    "peptide",
+    "proteomics",
+    "mass spec",
+    "psm"
+  ],
+  "author": "Michael Porter <michaelporter.chemistry@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emptyport/psm/issues"
+  },
+  "homepage": "https://github.com/emptyport/psm#readme",
+  "devDependencies": {},
+  "dependencies": {}
+}

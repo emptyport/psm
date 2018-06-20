@@ -7,6 +7,7 @@ module.exports =  class psm {
 
     // Mass related items
     this.charge = this.opt(options, 'charge', 0);
+    this.retention_time = this.opt(options, 'retention_time', 0);
     this.precursor_mass = this.opt(options, 'precursor_mass', 0);
     this.mass_err = this.opt(options, 'mass_err', 0);
     this.theoretical_mass = this.opt(options, 'theoretical_mass', 0);
@@ -17,12 +18,13 @@ module.exports =  class psm {
     // Search related info
     this.filename = this.opt(options, 'filename', '');
     this.scan_title = this.opt(options, 'scan_title', '');
+    this.scan_id = this.opt(options, 'scan_id', '');
 
-
-
-
-
-
+    // Scoring
+    this.score = this.opt(options, 'score', 0);
+    this.expect = this.opt(options, 'expect', 0);
+    this.is_decoy = this.opt(options, 'is_decoy', false);
+    this.rank = this.opt(options, 'rank', 0);
 
   }
 

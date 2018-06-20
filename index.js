@@ -15,8 +15,6 @@ module.exports =  class psm {
     this.modifications = this.opt(options, 'modifications', {});
 
     // Search related info
-    this.precursor_tolerance = this.opt(options, 'precursor_tolerance', 0);
-    this.fragment_tolerance = this.opt(options, 'fragment_tolerance', 0);
     this.filename = this.opt(options, 'filename', '');
     this.scan_title = this.opt(options, 'scan_title', '');
 

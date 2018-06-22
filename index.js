@@ -1,4 +1,4 @@
-module.exports =  class psm {
+module.exports =  class peptide-spectrum-match {
   constructor(options) {
     // Sequence related items
     this.sequence = this.opt(options, 'sequence', '');
@@ -19,6 +19,7 @@ module.exports =  class psm {
     this.filename = this.opt(options, 'filename', '');
     this.scan_title = this.opt(options, 'scan_title', '');
     this.scan_id = this.opt(options, 'scan_id', '');
+    this.search_engine = this.opt(options, 'search_engine', '');
 
     // Scoring
     this.score = this.opt(options, 'score', 0);

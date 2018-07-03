@@ -5,7 +5,8 @@ module.exports =  class peptide-spectrum-match {
     this.sequence_pre = this.opt(options, 'sequence_pre', '');
     this.sequence_post = this.opt(options, 'sequence_post', '');
     this.missed_cleavages = this.opt(options, 'missed_cleavages', 0)
-
+    this.protein = this.opt(options, 'protein', '');
+    
     // Mass related items
     this.charge = this.opt(options, 'charge', 0);
     this.retention_time = this.opt(options, 'retention_time', 0);

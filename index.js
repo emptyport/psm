@@ -32,8 +32,70 @@ module.exports =  class peptideSpectrumMatch {
   }
 
   // From here https://stackoverflow.com/questions/23577632/optional-arguments-in-nodejs-functions
-  opt(options, name, default_value){
+  opt(options, name, default_value) {
     return options && options[name]!==undefined ? options[name] : default_value;
-  } 
+  }
+
+  getHeader(delimiter=",") {
+    var fields = [
+      "Sequence",
+      "Sequence-pre",
+      "Sequence-post",
+      "Protein",
+      "Missed cleavages",
+      "Charge",
+      "Retention time",
+      "Precursor mass",
+      "Theoretical mass",
+      "Mass error",
+      "Modifications",
+      "Filename",
+      "Scan title",
+      "Scan ID",
+      "Score",
+      "Expect",
+      "Is decoy",
+      "Rank",
+      "Search engine"
+    ];
+    return fields.join(delimiter);
+  }
+
+  getDelimited(delimiter=",") {
+    var prettyMods = this.prettifyMods(this.modifications);
+    
+    var values = [
+      this.sequence,
+      this.sequence_pre,
+      this.sequence_post,
+      this.protein,
+      this.missed_cleavages,
+      this.charge,
+      this.retention_time,
+      this.precursor_mass,
+      this.theoretical_mass,
+      this.mass_err,
+      prettyMods,
+      this.filename,
+      this.scan_title,
+      this.scan_id,
+      this.score,
+      this.expect,
+      this.is_decoy,
+      this.rank,
+      this.search_engine
+    ];
+    return values.join(delimiter);
+  }
+
+  prettifyMods(modifications) {
+    let formattedString = '';
+    for(var i=0; i<modifications.length; i++) {
+      let currentMod = modifications[i];
+      formattedString += currentMod.mass+"@"+currentMod.residue+currentMod.position+",";
+    }
+    formattedString = formattedString.slice(0,-1);
+    return formattedString;
+  }
   
 }

@@ -34,7 +34,15 @@ let psm = {
 var psmObj = new peptideSpectrumMatch(psm);
 ```
 
-The fields are:
+If you want to save your PSMs as a csv, there are a couple helper functions to do so.
+
+#### getHeader(delimiter=",")
+This function will return a header string for a csv file with the specified delimiter. The returned string does not have a newline character at the end of it.
+
+#### getDelimited(delimiter=",")
+This function will return all the fields of the peptide-spectrum-match object as a delimited string. The values will be in the same order as what is indicated by the header. Once again there is no newline character at the end of the string.
+
+The fields of each peptide-spectrum-match object are:
 * `sequence` which is the sequence of the matched peptide
 * `sequence_pre` which is the residue immediately before the `sequence`
 * `sequence_post` which is the residue immediately after the `sequence`

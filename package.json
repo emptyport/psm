@@ -1,6 +1,6 @@
 {
   "name": "peptide-spectrum-match",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "description": "A class for standardizing how peptide spectrum matches (PSMs) are handled",
   "main": "index.js",
   "scripts": {},
@@ -13,7 +13,9 @@
     "peptide",
     "proteomics",
     "mass spec",
-    "psm"
+    "psm",
+    "peptide spectrum match",
+    "spectrum"
   ],
   "author": "Michael Porter <michaelporter.chemistry@gmail.com>",
   "license": "MIT",

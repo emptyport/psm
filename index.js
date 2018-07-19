@@ -35,13 +35,16 @@ module.exports =  class peptideSpectrumMatch {
     this.expect = this.opt(options, 'expect', '');
     this.p_value = this.opt(options, 'p_value', '');
     this.q_value = this.opt(options, 'q_value', '');
-    
+    this.fdr = this.opt(options, 'fdr', '');
 
   }
 
   // From here https://stackoverflow.com/questions/23577632/optional-arguments-in-nodejs-functions
+  // Further modified to change NaN's to blank values
   opt(options, name, default_value) {
-    return options && options[name]!==undefined ? options[name] : default_value;
+    var val = options && options[name]!==undefined ? options[name] : default_value;
+    if(Number.isNaN(val)) { return ''; }
+    else { return val; }
   }
 
   getHeader(delimiter=",") {
@@ -71,7 +74,8 @@ module.exports =  class peptideSpectrumMatch {
       "Xcorr",
       "Expect",
       "P value",
-      "Q value"
+      "Q value",
+      "FDR"
     ];
     return fields.join(delimiter);
   }
@@ -105,7 +109,8 @@ module.exports =  class peptideSpectrumMatch {
       this.xcorr,
       this.expect,
       this.p_value,
-      this.q_value
+      this.q_value,
+      this.fdr
     ];
     return values.join(delimiter);
   }

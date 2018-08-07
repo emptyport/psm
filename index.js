@@ -48,6 +48,7 @@ module.exports =  class peptideSpectrumMatch {
   }
 
   getHeader(delimiter=",") {
+    delimiter = "\""+delimiter+"\"";
     var fields = [
       "Sequence",
       "Sequence-pre",
@@ -77,12 +78,12 @@ module.exports =  class peptideSpectrumMatch {
       "Q value",
       "FDR"
     ];
-    return fields.join(delimiter);
+    return "\""+fields.join(delimiter)+"\"";
   }
 
   getDelimited(delimiter=",") {
     var prettyMods = this.prettifyMods(this.modifications);
-    
+    delimiter = "\""+delimiter+"\"";
     var values = [
       this.sequence,
       this.sequence_pre,
@@ -112,7 +113,7 @@ module.exports =  class peptideSpectrumMatch {
       this.q_value,
       this.fdr
     ];
-    return values.join(delimiter);
+    return "\""+values.join(delimiter)+"\"";
   }
 
   prettifyMods(modifications) {

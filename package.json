@@ -1,6 +1,6 @@
 {
   "name": "peptide-spectrum-match",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A class for standardizing how peptide spectrum matches (PSMs) are handled",
   "main": "index.js",
   "scripts": {},
